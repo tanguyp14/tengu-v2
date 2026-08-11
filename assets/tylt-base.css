@@ -10,6 +10,12 @@
   --tylt-orange: #ff9900;
   --tylt-yellow: #ffee00;
   --tylt-font: 'PT Mono', monospace;
+
+  /* Force the TYLT identity across every Dawn component (product cards, cart,
+     buttons, etc.) regardless of the theme editor's font_picker resolution. */
+  --font-body-family: 'PT Mono', monospace !important;
+  --font-heading-family: 'PT Mono', monospace !important;
+  --buttons-radius: 50px !important;
 }
 
 body.tylt-body {

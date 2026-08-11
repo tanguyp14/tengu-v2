@@ -84,6 +84,12 @@ body.tylt-home {
   font-family: var(--tylt-font);
 }
 
+@media screen and (max-width: 749px) {
+  .tylt-home-nav a {
+    font-size: clamp(2.8rem, 11vw, 4rem);
+  }
+}
+
 .tylt-home-nav a::after {
   content: '';
   width: 0;
