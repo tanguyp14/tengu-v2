@@ -1,0 +1,89 @@
+{%- render 'tylt-page-title', title: section.settings.page_title -%}
+
+<div class="tylt-page-content">
+  <section class="tylt-cpt-list-block" data-cpt-type="formation">
+    {%- if section.settings.intro_text != blank -%}
+      <div class="tylt-cpt-list-intro tylt-rich-text">{{ section.settings.intro_text }}</div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <nav class="tylt-cpt-list-menu">
+        {%- for block in section.blocks -%}
+          <a href="#tylt-formation-{{ forloop.index }}" class="tylt-cpt-list-menu-item" {{ block.shopify_attributes }}>
+            <span>
+              {%- render 'tylt-cpt-icon', title: block.settings.title -%}
+              {{ block.settings.title }}
+            </span>
+          </a>
+        {%- endfor -%}
+      </nav>
+
+      <div class="tylt-cpt-list-container">
+        {%- for block in section.blocks -%}
+          <article id="tylt-formation-{{ forloop.index }}" class="tylt-cpt-list-item">
+            <div class="tylt-cpt-list-header">
+              {%- if block.settings.image != blank -%}
+                <div class="tylt-cpt-list-thumbnail">
+                  {{ block.settings.image | image_url: width: 60 | image_tag: width: 30, height: 30 }}
+                </div>
+              {%- endif -%}
+              <h2 class="tylt-cpt-list-title">{{ block.settings.title }}</h2>
+            </div>
+            <div class="tylt-cpt-list-content tylt-rich-text">{{ block.settings.content }}</div>
+          </article>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "TYLT Formations",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Titre de page",
+      "default": "Formations"
+    },
+    {
+      "type": "richtext",
+      "id": "intro_text",
+      "label": "Texte d'introduction"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "formation",
+      "name": "TYLT Formation",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Nouvelle formation"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Vignette"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Contenu"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "TYLT Formations",
+      "blocks": [
+        { "type": "formation" }
+      ]
+    }
+  ]
+}
+{% endschema %}

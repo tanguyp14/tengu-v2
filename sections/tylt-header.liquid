@@ -17,6 +17,12 @@
 
 <header id="tylt-masthead" class="tylt-header" role="banner">
   <div class="tylt-container">
+    {%- unless is_home -%}
+      <button class="tylt-menu-toggle" aria-controls="tylt-drawer-menu" aria-expanded="false" aria-label="Menu">
+        <span class="tylt-menu-icon"></span>
+      </button>
+    {%- endunless -%}
+
     <nav id="tylt-site-navigation" class="tylt-main-navigation{% if is_home %} tylt-home-nav-wrap{% endif %}" role="navigation" aria-label="Menu principal">
       {%- if is_home -%}
         <ul class="tylt-home-nav">
@@ -24,14 +30,26 @@
             <li><a href="{{ link.url }}">{{ link.title }}</a></li>
           {%- endfor -%}
         </ul>
-      {%- else -%}
-        <ul class="tylt-simple-nav">
+      {%- endif -%}
+    </nav>
+
+    {%- unless is_home -%}
+      <div id="tylt-drawer-menu" class="tylt-menu-drawer">
+        <ul class="tylt-drawer-nav">
           {%- for link in section.settings.menu.links -%}
             <li><a href="{{ link.url }}">{{ link.title }}</a></li>
           {%- endfor -%}
         </ul>
-      {%- endif -%}
-    </nav>
+
+        <div class="tylt-drawer-actions">
+          {%- render 'tylt-hero-actions', vertical: false -%}
+        </div>
+      </div>
+
+      <div class="tylt-hero-actions-sidebar">
+        {%- render 'tylt-hero-actions', vertical: true -%}
+      </div>
+    {%- endunless -%}
   </div>
 </header>
 

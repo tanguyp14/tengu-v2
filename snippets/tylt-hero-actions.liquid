@@ -1,0 +1,24 @@
+{%- comment -%}
+  Usage: {% render 'tylt-hero-actions' %}
+  Renders the status pill + contact button shown on every inner page
+  (drawer menu and the fixed vertical sidebar).
+{%- endcomment -%}
+
+{%- liquid
+  assign status_color = settings.tylt_status_color | default: 'green'
+  assign status_text = settings.tylt_status_text | default: 'Disponible pour de nouveaux projets'
+  assign status_class = 'tylt-status-available'
+  if status_color == 'orange'
+    assign status_class = 'tylt-status-busy'
+  elsif status_color == 'red'
+    assign status_class = 'tylt-status-unavailable'
+  endif
+-%}
+
+<div class="tylt-hero-actions-vertical">
+  <div class="tylt-hero-status-pill {{ status_class }}">
+    <span class="tylt-status-indicator"></span>
+    <span class="tylt-status-text">{{ status_text }}</span>
+  </div>
+  <a href="{{ settings.tylt_contact_url | default: '/pages/contact' }}" class="tylt-button">Contactez-moi →</a>
+</div>

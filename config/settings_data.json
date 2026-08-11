@@ -190,7 +190,10 @@
             "color_scheme": "scheme-1"
           }
         }
-      }
+      },
+      "tylt_status_color": "green",
+      "tylt_status_text": "Sur un projet, mais dispo pour discuter du votre",
+      "tylt_contact_url": "/pages/contact"
     }
   }
 }

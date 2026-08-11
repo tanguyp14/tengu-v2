@@ -280,10 +280,13 @@
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'tylt-base.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'tylt-global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'tylt-svg-morph.js' | asset_url }}" defer="defer"></script>
     {%- if template.name == 'index' -%}
       {{ 'tylt-home.css' | asset_url | stylesheet_tag }}
       <script src="{{ 'tylt-svg-marquee.js' | asset_url }}" defer="defer"></script>
-      <script src="{{ 'tylt-svg-morph.js' | asset_url }}" defer="defer"></script>
+    {%- else -%}
+      {{ 'tylt-inner.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 

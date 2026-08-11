@@ -8,6 +8,34 @@
     "theme_support_url": "https://support.shopify.com/"
   },
   {
+    "name": "TYLT — Statut & Contact",
+    "settings": [
+      {
+        "type": "select",
+        "id": "tylt_status_color",
+        "label": "Couleur du statut",
+        "options": [
+          { "value": "green", "label": "Disponible" },
+          { "value": "orange", "label": "Occupé" },
+          { "value": "red", "label": "Indisponible" }
+        ],
+        "default": "green"
+      },
+      {
+        "type": "text",
+        "id": "tylt_status_text",
+        "label": "Texte du statut",
+        "default": "Sur un projet, mais dispo pour discuter du votre"
+      },
+      {
+        "type": "url",
+        "id": "tylt_contact_url",
+        "label": "URL du bouton contact",
+        "info": "Laisser vide pour utiliser /pages/contact"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.logo.name",
     "settings": [
       {
