@@ -6,6 +6,7 @@
       <div class="tylt-cpt-list-intro tylt-rich-text">{{ section.settings.intro_text }}</div>
     {%- endif -%}
 
+
     {%- if section.blocks.size > 0 -%}
       <nav class="tylt-cpt-list-menu">
         {%- for block in section.blocks -%}
@@ -22,9 +23,13 @@
         {%- for block in section.blocks -%}
           <article id="tylt-formation-{{ forloop.index }}" class="tylt-cpt-list-item">
             <div class="tylt-cpt-list-header">
-              {%- if block.settings.image != blank -%}
+              {%- if block.settings.image_upload != blank -%}
                 <div class="tylt-cpt-list-thumbnail">
-                  {{ block.settings.image | image_url: width: 60 | image_tag: width: 30, height: 30 }}
+                  {{ block.settings.image_upload | image_url: width: 60 | image_tag: width: 30, height: 30 }}
+                </div>
+              {%- elsif block.settings.image != blank -%}
+                <div class="tylt-cpt-list-thumbnail">
+                  <img src="{{ block.settings.image | asset_url }}" width="30" height="30" alt="" loading="lazy">
                 </div>
               {%- endif -%}
               <h2 class="tylt-cpt-list-title">{{ block.settings.title }}</h2>
@@ -48,7 +53,7 @@
       "default": "Formations"
     },
     {
-      "type": "richtext",
+      "type": "html",
       "id": "intro_text",
       "label": "Texte d'introduction"
     }
@@ -65,12 +70,18 @@
           "default": "Nouvelle formation"
         },
         {
-          "type": "image_picker",
+          "type": "text",
           "id": "image",
-          "label": "Vignette"
+          "label": "Vignette (fichier du thème)",
+          "info": "Nom de fichier dans /assets, ex: tylt-formation-fleur.svg"
         },
         {
-          "type": "richtext",
+          "type": "image_picker",
+          "id": "image_upload",
+          "label": "Vignette (upload, prioritaire si renseigné)"
+        },
+        {
+          "type": "html",
           "id": "content",
           "label": "Contenu"
         }

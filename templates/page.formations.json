@@ -2,10 +2,79 @@
   "sections": {
     "main": {
       "type": "tylt-formations",
+      "blocks": {
+        "formation-1": {
+          "type": "formation",
+          "settings": {
+            "title": "Shopify",
+            "image": "tylt-formation-fleur2-1.svg",
+            "content": "<p class=\"wp-block-paragraph\">Créez et gérez votre boutique de A à Z</p>\n<p class=\"wp-block-paragraph\">Proposez à vos apprenants une alternative complète et intuitive à WordPress, allant de la customisation à la gestion pure et dure de leur boutique en ligne. <br>Maîtrisez cet outil puissant pour optimiser la gestion, la visibilité et les ventes de leurs projets e-commerce.</p>\n<p class=\"wp-block-paragraph\">Quelques points clef :</p>\n<ul class=\"wp-block-list\">\n<li>Prise en main de l’interface (Shopify Admin)</li>\n<li>Paramétrage des produits, variantes, livraisons, paiements</li>\n<li>Personnalisation du thème (structure + identité)</li>\n<li>Utilisation des applications et automatisations utiles</li>\n<li>Notions de SEO, performance, bonnes pratiques e-commerce</li>\n</ul>"
+          }
+        },
+        "formation-2": {
+          "type": "formation",
+          "settings": {
+            "title": "WordPress",
+            "image": "tylt-formation-fleur-1.svg",
+            "content": "<p class=\"wp-block-paragraph\">Créez des sites web solides, évolutifs et accessibles avec WordPress.</p>\n<p class=\"wp-block-paragraph\">Proposez à vos apprenants une prise en main complète de l’outil, de l’installation jusqu’à la mise en ligne, en passant par la création de pages, la gestion des thèmes, et l’intégration de WooCommerce.<br></p>\n<p class=\"wp-block-paragraph\">Comprendre le fonctionnement du CMS en profondeur, maîtriser ses bonnes pratiques, et bâtir des sites performants et sécurisés.</p>\n<p class=\"wp-block-paragraph\">Quelques points clef :</p>\n<ul class=\"wp-block-list\">\n<li>Installation et configuration de WordPress</li>\n<li>Création de thèmes Gutenberg</li>\n<li>Création de pages, gestion des menus, formulaires, médias</li>\n<li>Mise en place de WooCommerce : produits, panier, paiement</li>\n<li>Optimisation des performances, sécurité et SEO</li>\n</ul>"
+          }
+        },
+        "formation-3": {
+          "type": "formation",
+          "settings": {
+            "title": "UI/UX",
+            "image": "tylt-formation-fleur2.svg",
+            "content": "<p class=\"wp-block-paragraph\">Apprenez à concevoir des interfaces qui allient esthétique et efficacité.</p>\n<p class=\"wp-block-paragraph\">Vos apprenants découvrent les principes fondamentaux du design (contrastes, hiérarchie, lisibilité) ainsi que des méthodes concrètes : wireframes, prototypage sur Figma, tests utilisateurs et design system.<br></p>\n<p class=\"wp-block-paragraph\">Créer des expériences claires, cohérentes, accessibles… et pensées pour les vrais usages.</p>\n<p class=\"wp-block-paragraph\">Quelques points clef :</p>\n<ul class=\"wp-block-list\">\n<li>Principes de design (contrastes, hiérarchies, lisibilité…)</li>\n<li>Ergonomie : fluidité, accessibilité, cohérence visuelle</li>\n<li>Méthodologie : wireframes, prototypage (Figma, Adobe XD…)</li>\n<li>Tests utilisateurs, itérations, design system</li>\n<li>Sensibilisation au responsive et aux parcours mobiles</li>\n</ul>\n<p class=\"wp-block-paragraph\"></p>"
+          }
+        },
+        "formation-4": {
+          "type": "formation",
+          "settings": {
+            "title": "Base Web",
+            "image": "tylt-formation-fleur4-1.svg",
+            "content": "<p class=\"wp-block-paragraph\">Apprenez à vos élèves comment fonctionne réellement le web.</p>\n<p class=\"wp-block-paragraph\">Avant de concevoir ou développer, il est essentiel de maîtriser les concepts-clés : de l’hébergement à la structure d’une page HTML, en passant par les navigateurs, le fonctionnement des DNS ou les notions de responsive.</p>\n<p class=\"wp-block-paragraph\">Une base claire et concrète, indispensable pour aller plus loin sereinement, quel que soit le projet.</p>\n<p class=\"wp-block-paragraph\">Quelques points clef :</p>\n<ul class=\"wp-block-list\">\n<li>Structure d’une page : HTML, CSS, JS (notions fondamentales)</li>\n<li>Navigateur, serveur, hébergement : qui fait quoi ?</li>\n<li>Comprendre le responsive et les tailles d’écrans</li>\n<li>Initiation aux outils de développement (inspecteur, console…)</li>\n<li>Bonnes pratiques d’organisation de fichiers et de projet</li>\n</ul>"
+          }
+        },
+        "formation-5": {
+          "type": "formation",
+          "settings": {
+            "title": "Conception 3D",
+            "image": "tylt-formation-fleur.svg",
+            "content": "<p class=\"wp-block-paragraph\">Maîtrisez la modélisation technique pour des objets précis et fonctionnels.</p>\n<p class=\"wp-block-paragraph\">Vos apprenants s’initient à la modélisation à partir de plans ou de mesures, sur des logiciels comme Tinkercad puis Fusion 360.<br></p>\n<p class=\"wp-block-paragraph\">Chaque session les guide jusqu’à un fichier prêt à être imprimé, tout en intégrant les contraintes de fabrication et les bonnes pratiques de conception.</p>\n<p class=\"wp-block-paragraph\">Quelques points clef :</p>\n<ul class=\"wp-block-list\">\n<li>Modélisation technique à partir de plans ou mesures</li>\n<li>Utilisation de logiciels : Fusion 360, Tinkercad, etc.</li>\n<li>Préparation pour l’impression ou la fabrication</li>\n<li>Conseils de conception pour éviter les erreurs courantes</li>\n</ul>"
+          }
+        },
+        "formation-6": {
+          "type": "formation",
+          "settings": {
+            "title": "Impression 3D",
+            "image": "tylt-formation-fleur2-1.svg",
+            "content": "<p class=\"wp-block-paragraph\">Passez du modèle virtuel à l’objet concret avec méthode.</p>\n<p class=\"wp-block-paragraph\">Les apprenants apprennent à choisir leurs matériaux (PLA, PETG, TPU…), régler leur slicer (Cura, PrusaSlicer), gérer les supports et entretenir leurs machines.<br></p>\n<p class=\"wp-block-paragraph\">Une approche complète, orientée production, pour comprendre ce qui se joue entre fichier STL et pièce réussie.</p>\n<p class=\"wp-block-paragraph\">Quelques points clef :</p>\n<ul class=\"wp-block-list\">\n<li>Choix des matériaux (PLA, PETG, TPU…)</li>\n<li>Réglages slicer (Cura, PrusaSlicer)</li>\n<li>Gestion des supports, températures, vitesses</li>\n<li>Entretien et calibration d’imprimantes (FDM/FFF)</li>\n</ul>"
+          }
+        },
+        "formation-7": {
+          "type": "formation",
+          "settings": {
+            "title": "Gravure Laser",
+            "image": "tylt-formation-fleur2.svg",
+            "content": "<p class=\"wp-block-paragraph\">Formez vos élèves à une technologie de création rapide et exigeante.</p>\n<p class=\"wp-block-paragraph\">De la création de fichiers vectoriels (Illustrator, LightBurn) jusqu’au réglage des paramètres selon les matériaux, chaque étape est abordée de manière rigoureuse.<br></p>\n<p class=\"wp-block-paragraph\">L’accent est mis sur la sécurité, l’entretien et l’optimisation, pour graver et découper proprement, efficacement et sans danger.</p>\n<p class=\"wp-block-paragraph\">Quelques points clef :</p>\n<ul class=\"wp-block-list\">\n<li>Création de fichiers vectoriels (Illustrator, LightBurn…)</li>\n<li>Types de matériaux et réglages adaptés</li>\n<li>Sécurité, ventilation, entretien machine</li>\n<li>Optimisation des temps de gravure et de découpe</li>\n</ul>"
+          }
+        }
+      },
+      "block_order": [
+        "formation-1",
+        "formation-2",
+        "formation-3",
+        "formation-4",
+        "formation-5",
+        "formation-6",
+        "formation-7"
+      ],
       "settings": {
         "page_title": "Formations"
       }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }

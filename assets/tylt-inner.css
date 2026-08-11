@@ -248,6 +248,18 @@ body.tylt-body:not(.tylt-home) main#MainContent {
 .tylt-drawer-actions .tylt-hero-actions-vertical {
   flex-direction: column;
   align-items: stretch;
+  white-space: normal;
+  gap: 1.25rem;
+}
+
+.tylt-drawer-actions .tylt-hero-status-pill {
+  width: 100%;
+}
+
+.tylt-drawer-actions .tylt-button {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
 }
 
 /* Page title with morphing star icon */
@@ -263,6 +275,7 @@ body.tylt-body:not(.tylt-home) main#MainContent {
   flex-shrink: 0;
   width: 80px;
   height: 80px;
+  overflow: visible;
 }
 
 @media screen and (max-width: 749px) {
@@ -277,6 +290,8 @@ body.tylt-body:not(.tylt-home) main#MainContent {
   height: 100%;
   display: block;
   padding: 10px;
+  overflow: visible;
+  box-sizing: border-box;
 }
 
 .tylt-page-title {
@@ -456,7 +471,7 @@ body.tylt-body:not(.tylt-home) main#MainContent {
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 40px;
-  font-size: clamp(0.5em, 0.8em, 0.9rem);
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -478,19 +493,21 @@ body.tylt-body:not(.tylt-home) main#MainContent {
 .tylt-cpt-list-menu-item .tylt-menu-icon-svg {
   display: inline-flex;
   align-items: center;
-  height: 2em;
+  height: 1.4em;
+  background: none;
 }
 
 @media screen and (max-width: 749px) {
   .tylt-cpt-list-menu-item .tylt-menu-icon-svg {
-    height: 1em;
+    height: 1.1em;
   }
 }
 
 .tylt-cpt-list-menu-item .tylt-menu-icon-svg svg {
   height: 100%;
   width: auto;
-  color: var(--tylt-white);
+  color: var(--tylt-black);
+  background: none;
 }
 
 .tylt-cpt-list-menu-item:hover span {

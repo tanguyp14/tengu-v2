@@ -111,6 +111,79 @@ body.tylt-body {
   display: block;
 }
 
+/* Status pill (used in home hero, drawer menu and fixed sidebar) */
+.tylt-hero-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 10px 20px;
+  background-color: rgba(239, 239, 239, 0.8);
+  border-radius: 50px;
+  border: 1px solid rgba(21, 21, 21, 0.1);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.tylt-status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.tylt-status-indicator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: tylt-pulse 2s ease-in-out infinite;
+}
+
+.tylt-status-text {
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  color: var(--tylt-black);
+  font-weight: 500;
+  white-space: normal;
+}
+
+.tylt-status-available .tylt-status-indicator {
+  background-color: #10b981;
+}
+.tylt-status-available .tylt-status-indicator::before {
+  background-color: rgba(16, 185, 129, 0.4);
+}
+
+.tylt-status-busy .tylt-status-indicator {
+  background-color: var(--tylt-orange);
+}
+.tylt-status-busy .tylt-status-indicator::before {
+  background-color: rgba(255, 153, 0, 0.4);
+}
+
+.tylt-status-unavailable .tylt-status-indicator {
+  background-color: var(--tylt-red);
+}
+.tylt-status-unavailable .tylt-status-indicator::before {
+  background-color: rgba(227, 7, 66, 0.4);
+}
+
+@keyframes tylt-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2);
+  }
+}
+
 /* Site chrome */
 .tylt-site {
   overflow-x: clip;
