@@ -15,7 +15,7 @@
       "settings": {
         "heading": "Projets design, formations web et sites web personnalisés",
         "show_status": true,
-        "status_color": "green",
+        "status_color": "orange",
         "status_text": "Sur un projet, mais dispo pour discuter du votre",
         "button_text": "Contactez-moi →",
         "button_url": ""
