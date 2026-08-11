@@ -1,0 +1,124 @@
+/* TYLT base styles — ported pixel-for-pixel from le_tengu_starter (WordPress) */
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+:root {
+  --tylt-black: #151515;
+  --tylt-white: #efefef;
+  --tylt-blue: #5118fb;
+  --tylt-red: #e30742;
+  --tylt-orange: #ff9900;
+  --tylt-yellow: #ffee00;
+  --tylt-font: 'PT Mono', monospace;
+}
+
+body.tylt-body {
+  font-family: var(--tylt-font) !important;
+  font-size: 16px;
+  line-height: 1.1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--tylt-black);
+  background-color: var(--tylt-white);
+}
+
+.tylt-body strong {
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+.tylt-body h1,
+.tylt-body h2,
+.tylt-body h3,
+.tylt-body h4,
+.tylt-body h5,
+.tylt-body h6 {
+  font-weight: normal;
+  line-height: 110%;
+  margin: 0;
+}
+
+/* Buttons */
+.tylt-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 10px 20px;
+  background-color: var(--tylt-black);
+  color: var(--tylt-white) !important;
+  border: none;
+  border-radius: 50px;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  line-height: 1;
+  text-decoration: none !important;
+}
+
+.tylt-button:hover {
+  color: var(--tylt-white) !important;
+  letter-spacing: 1px;
+}
+
+.tylt-button:focus {
+  outline: 2px solid var(--tylt-blue);
+  outline-offset: 2px;
+}
+
+/* Site chrome */
+.tylt-site {
+  overflow-x: clip;
+  min-height: 100vh;
+  position: relative;
+}
+
+.tylt-back-top {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 15;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--tylt-black);
+  color: var(--tylt-white);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.tylt-footer {
+  position: relative;
+  bottom: 5px;
+  z-index: 15;
+  width: 100%;
+  text-align: right;
+  padding: 0 60px 10px 0;
+  font-size: 10px;
+  color: var(--tylt-black);
+  box-sizing: border-box;
+}
+
+.tylt-footer a,
+.tylt-footer a:visited,
+.tylt-footer a:hover,
+.tylt-footer a:focus {
+  color: var(--tylt-black);
+}
+
+.tylt-footer .tylt-footer-legal-links {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.tylt-footer p {
+  margin: 0;
+}
