@@ -1,38 +1,28 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "tylt-morph": {
-      "type": "tylt-svg-morph",
-      "settings": {}
-    },
-    "tylt-marquee": {
-      "type": "tylt-svg-marquee",
-      "blocks": {
-        "svg-1": { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-1.svg" } },
-        "svg-2": { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-2.svg" } },
-        "svg-3": { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-3.svg" } },
-        "svg-4": { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-4.svg" } },
-        "svg-5": { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-5.svg" } },
-        "svg-6": { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-6.svg" } }
-      },
-      "block_order": ["svg-1", "svg-2", "svg-3", "svg-4", "svg-5", "svg-6"],
-      "settings": {
-        "angle": -15,
-        "height": "30vh",
-        "opacity": 50,
-        "speed": 1
-      }
-    },
-    "tylt-hero": {
+    "tylt_hero_status_KBCcnx": {
       "type": "tylt-hero-status",
+      "name": "TYLT Hero Status",
       "settings": {
         "heading": "Projets design, formations web et sites web personnalisés",
         "show_status": true,
         "status_color": "green",
         "status_text": "Sur un projet, mais dispo pour discuter du votre",
         "button_text": "Contactez-moi →",
-        "button_url": "/pages/contact"
+        "button_url": ""
       }
     }
   },
-  "order": ["tylt-morph", "tylt-marquee", "tylt-hero"]
+  "order": [
+    "tylt_hero_status_KBCcnx"
+  ]
 }
