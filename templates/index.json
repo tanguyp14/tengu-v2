@@ -76,10 +76,16 @@
         "opacity": 50,
         "speed": 1
       }
+    },
+    "tylt_svg_morph_64YA6U": {
+      "type": "tylt-svg-morph",
+      "name": "TYLT SVG Morph",
+      "settings": {}
     }
   },
   "order": [
     "tylt_hero_status_KBCcnx",
-    "tylt_svg_marquee_VEQJ3F"
+    "tylt_svg_marquee_VEQJ3F",
+    "tylt_svg_morph_64YA6U"
   ]
 }
