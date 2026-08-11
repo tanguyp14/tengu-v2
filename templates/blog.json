@@ -12,7 +12,7 @@
     "main": {
       "type": "tylt-blog-grid",
       "settings": {
-        "page_title": "aaa",
+        "page_title": "",
         "intro_text": ""
       }
     }
