@@ -20,9 +20,66 @@
         "button_text": "Contactez-moi →",
         "button_url": ""
       }
+    },
+    "tylt_svg_marquee_VEQJ3F": {
+      "type": "tylt-svg-marquee",
+      "blocks": {
+        "svg_zmTazy": {
+          "type": "svg",
+          "settings": {
+            "fallback_asset": "tylt-marquee-1.svg"
+          }
+        },
+        "svg_ezQBpw": {
+          "type": "svg",
+          "settings": {
+            "fallback_asset": "tylt-marquee-2.svg"
+          }
+        },
+        "svg_wwWeCT": {
+          "type": "svg",
+          "settings": {
+            "fallback_asset": "tylt-marquee-3.svg"
+          }
+        },
+        "svg_CzrJ4r": {
+          "type": "svg",
+          "settings": {
+            "fallback_asset": "tylt-marquee-4.svg"
+          }
+        },
+        "svg_EijYJE": {
+          "type": "svg",
+          "settings": {
+            "fallback_asset": "tylt-marquee-5.svg"
+          }
+        },
+        "svg_Gnpd74": {
+          "type": "svg",
+          "settings": {
+            "fallback_asset": "tylt-marquee-6.svg"
+          }
+        }
+      },
+      "block_order": [
+        "svg_zmTazy",
+        "svg_ezQBpw",
+        "svg_wwWeCT",
+        "svg_CzrJ4r",
+        "svg_EijYJE",
+        "svg_Gnpd74"
+      ],
+      "name": "TYLT SVG Marquee",
+      "settings": {
+        "angle": -15,
+        "height": "30vh",
+        "opacity": 50,
+        "speed": 1
+      }
     }
   },
   "order": [
-    "tylt_hero_status_KBCcnx"
+    "tylt_hero_status_KBCcnx",
+    "tylt_svg_marquee_VEQJ3F"
   ]
 }
