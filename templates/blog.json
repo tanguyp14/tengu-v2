@@ -11,8 +11,13 @@
   "sections": {
     "main": {
       "type": "tylt-blog-grid",
-      "settings": {}
+      "settings": {
+        "page_title": "aaa",
+        "intro_text": ""
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
