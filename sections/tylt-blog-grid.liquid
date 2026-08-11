@@ -1,0 +1,74 @@
+{%- liquid
+  assign tylt_page_title = section.settings.page_title
+  if tylt_page_title == blank
+    assign tylt_page_title = blog.title
+  endif
+-%}
+{%- render 'tylt-page-title', title: tylt_page_title -%}
+
+<div class="tylt-page-content">
+  <section class="tylt-cpt-list-block" data-cpt-type="{{ blog.handle }}">
+    {%- if section.settings.intro_text != blank -%}
+      <div class="tylt-cpt-list-intro tylt-rich-text">{{ section.settings.intro_text }}</div>
+    {%- endif -%}
+
+    {%- paginate blog.articles by 250 -%}
+      {%- if blog.all_tags.size > 0 -%}
+        <nav class="tylt-cpt-list-menu">
+          <button class="tylt-cpt-list-menu-item tylt-filter-tag active" data-tag="all">
+            <span>Tous les projets</span>
+          </button>
+          {%- for tag in blog.all_tags -%}
+            <button class="tylt-cpt-list-menu-item tylt-filter-tag" data-tag="{{ tag | handleize }}">
+              <span>{{ tag }}</span>
+            </button>
+          {%- endfor -%}
+        </nav>
+      {%- endif -%}
+
+      <div class="tylt-cpt-list-grid">
+        {%- for article in blog.articles -%}
+          {%- liquid
+            assign tag_handles = ''
+            for tag in article.tags
+              assign tag_handles = tag_handles | append: tag | handleize | append: ' '
+            endfor
+          -%}
+          <article class="tylt-cpt-card" data-tags="{{ tag_handles | strip }}">
+            <a href="{{ article.url }}" class="tylt-cpt-card-link">
+              {%- if article.image != blank -%}
+                <div class="tylt-cpt-card-image">
+                  {{ article.image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+                </div>
+              {%- endif -%}
+              <div class="tylt-cpt-card-overlay">
+                {%- if article.tags.size > 0 -%}
+                  <div class="tylt-cpt-card-tags">{{ article.tags | join: ' - ' }}</div>
+                {%- endif -%}
+                <h2 class="tylt-cpt-card-title">{{ article.title }}</h2>
+              </div>
+            </a>
+          </article>
+        {%- endfor -%}
+      </div>
+    {%- endpaginate -%}
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "TYLT Blog Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Titre de page (vide = titre du blog)"
+    },
+    {
+      "type": "richtext",
+      "id": "intro_text",
+      "label": "Texte d'introduction"
+    }
+  ]
+}
+{% endschema %}

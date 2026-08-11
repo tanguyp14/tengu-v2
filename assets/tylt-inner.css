@@ -22,9 +22,8 @@ body.tylt-body:not(.tylt-home) {
 
 /* Branding */
 body.tylt-body:not(.tylt-home) .tylt-branding {
-  position: fixed;
-  top: 15px;
-  left: 0;
+  position: relative;
+  margin-top: 15px;
   z-index: 38;
   padding-left: 2rem;
 }
@@ -74,6 +73,17 @@ body.tylt-body:not(.tylt-home) .tylt-header.tylt-header--menu-open {
 body.tylt-body:not(.tylt-home) .tylt-container {
   max-width: none;
   margin: 0;
+}
+
+body.tylt-body:not(.tylt-home) main#MainContent {
+  position: relative;
+  padding: 2rem;
+}
+
+@media screen and (max-width: 749px) {
+  body.tylt-body:not(.tylt-home) main#MainContent {
+    padding: 1rem;
+  }
 }
 
 /* Hamburger toggle */
@@ -280,14 +290,8 @@ body.tylt-body:not(.tylt-home) .tylt-container {
 .tylt-page-content {
   position: relative;
   z-index: 21;
-  padding: 2rem;
   max-width: 1000px;
-}
-
-@media screen and (max-width: 749px) {
-  .tylt-page-content {
-    padding: 1rem;
-  }
+  margin-top: 2rem;
 }
 
 /* Star-bullet lists */
@@ -360,6 +364,23 @@ body.tylt-body:not(.tylt-home) .tylt-container {
 .rte ul li:nth-child(4n + 4)::before {
   mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M65.1951 114.707L0 56.7912L14.676 36.5488L65.1951 94.7458L41.2056 25.5842L65.1951 0L76.7665 86.3114L96.5226 25.5842L144.784 75.0657L96.5226 104.867L162 128.764L109.223 167L76.7665 128.764L29.6341 154.348L0 104.867L65.1951 114.707Z'/%3E%3C/svg%3E");
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M65.1951 114.707L0 56.7912L14.676 36.5488L65.1951 94.7458L41.2056 25.5842L65.1951 0L76.7665 86.3114L96.5226 25.5842L144.784 75.0657L96.5226 104.867L162 128.764L109.223 167L76.7665 128.764L29.6341 154.348L0 104.867L65.1951 114.707Z'/%3E%3C/svg%3E");
+}
+
+/* Article single page */
+.tylt-article-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.tylt-article-content {
+  margin-bottom: 2rem;
+}
+
+.tylt-article-content p {
+  margin: 0 0 1rem;
 }
 
 /* CPT list (Formations: anchor menu + full list) */
