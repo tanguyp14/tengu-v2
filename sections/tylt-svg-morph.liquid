@@ -1,0 +1,49 @@
+{%- liquid
+  assign shape_a = 'M34.5185 158.88L76.4444 122.535L59.7037 184.841L97.1852 193L109.63 122.535L133.037 193L175.704 166.001L139.852 109.332L192 102.953L190.222 58.4489L133.037 66.9047V0L82.5185 6.08224V58.4489L43.7037 29.9662L0 63.0477L49.4815 101.766L17.4815 122.535L34.5185 158.88Z'
+  assign shape_b = 'M63.4633 18.4347L83.6562 80.8869L51.6841 0L34.9769 18.4347L79.0887 89.2891L31.7317 30.9753L11.4186 62.7031L75.2425 96.1865L6.85115 93.4275L11.4186 135.439L77.5262 102.958L0 160.645L22.2362 193L82.0936 108.1L48.3187 181.839H75.2425L90.5073 109.48V180.083L111.421 168.922L98.0797 107.097L128.489 189.363L150.725 170.929L105.291 102.331L147.72 153.873L169.957 135.815L109.138 96.1865L156.254 111.862L163.827 80.8869L109.138 89.2891L172 51.9181L153.971 31.3515L103.609 80.8869L139.307 18.8109L109.138 3.13515L93.5122 78.755V15.2995L63.4633 18.4347Z'
+  assign shape_c = 'M7.82892 50.7178L59.2275 92.2451L0 124.922L46.9735 193L83.7355 115.732L101.776 193L157.94 161.684L101.776 115.732L185.511 131.39L180.406 67.3968L101.776 92.2451L153.855 3.74427L77.2681 0V86.4585L51.0582 8.16931L7.82892 50.7178Z'
+  assign shape_d = 'M65.1951 114.707L0 56.7912L14.676 36.5488L65.1951 94.7458L41.2056 25.5842L65.1951 0L76.7665 86.3114L96.5226 25.5842L144.784 75.0657L96.5226 104.867L162 128.764L109.223 167L76.7665 128.764L29.6341 154.348L0 104.867L65.1951 114.707Z'
+-%}
+
+<section class="tylt-svg-morph-block">
+  <div class="tylt-svg-morph-grid">
+    <div class="tylt-svg-morph-container">
+      <svg class="tylt-svg-morph-canvas" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <g class="tylt-svg-shape" transform="translate(4, 4)"><path d="{{ shape_a }}" fill="#EFEFEF"/></g>
+        <g class="tylt-svg-shape" style="display:none;" transform="translate(14, 4)"><path d="{{ shape_b }}" fill="#EFEFEF"/></g>
+        <g class="tylt-svg-shape" style="display:none;" transform="translate(7, 4)"><path d="{{ shape_c }}" fill="#EFEFEF"/></g>
+        <g class="tylt-svg-shape" style="display:none;" transform="translate(19, 16.5)"><path d="{{ shape_d }}" fill="#EFEFEF"/></g>
+      </svg>
+    </div>
+
+    <div class="tylt-svg-morph-container">
+      <svg class="tylt-svg-morph-canvas" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <g class="tylt-svg-shape" transform="translate(14, 4)"><path d="{{ shape_b }}" fill="#EFEFEF"/></g>
+        <g class="tylt-svg-shape" style="display:none;" transform="translate(7, 4)"><path d="{{ shape_c }}" fill="#EFEFEF"/></g>
+        <g class="tylt-svg-shape" style="display:none;" transform="translate(19, 16.5)"><path d="{{ shape_d }}" fill="#EFEFEF"/></g>
+        <g class="tylt-svg-shape" style="display:none;" transform="translate(4, 4)"><path d="{{ shape_a }}" fill="#EFEFEF"/></g>
+      </svg>
+    </div>
+
+    <div class="tylt-svg-morph-container">
+      <svg class="tylt-svg-morph-canvas" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <g class="tylt-svg-shape" transform="translate(7, 4)"><path d="{{ shape_c }}" fill="#EFEFEF"/></g>
+        <g class="tylt-svg-shape" style="display:none;" transform="translate(19, 16.5)"><path d="{{ shape_d }}" fill="#EFEFEF"/></g>
+        <g class="tylt-svg-shape" style="display:none;" transform="translate(4, 4)"><path d="{{ shape_a }}" fill="#EFEFEF"/></g>
+        <g class="tylt-svg-shape" style="display:none;" transform="translate(14, 4)"><path d="{{ shape_b }}" fill="#EFEFEF"/></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "TYLT SVG Morph",
+  "settings": [],
+  "presets": [
+    {
+      "name": "TYLT SVG Morph"
+    }
+  ]
+}
+{% endschema %}

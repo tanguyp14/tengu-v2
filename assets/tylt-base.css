@@ -69,6 +69,42 @@ body.tylt-body {
   outline-offset: 2px;
 }
 
+/* Header (non-home default) */
+.tylt-header {
+  padding: 1.5rem 2rem;
+}
+
+.tylt-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.tylt-simple-nav {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tylt-simple-nav a {
+  color: var(--tylt-black);
+  text-decoration: none;
+  text-transform: lowercase;
+  font-size: 1rem;
+}
+
+.tylt-simple-nav a:hover {
+  text-decoration: underline;
+}
+
+.tylt-branding img {
+  max-height: clamp(60px, 4vw, 5rem);
+  width: auto;
+  margin: 1.5rem 2rem;
+  display: block;
+}
+
 /* Site chrome */
 .tylt-site {
   overflow-x: clip;

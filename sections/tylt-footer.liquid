@@ -1,0 +1,30 @@
+<footer class="tylt-footer" role="contentinfo">
+  <nav class="tylt-footer-legal-links">
+    {%- for link in section.settings.menu.links -%}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    {%- endfor -%}
+    <p>&copy; {{ section.settings.copyright_name | default: shop.name }} - {{ 'now' | date: '%Y' }}</p>
+  </nav>
+</footer>
+
+<a href="#tylt-masthead" class="tylt-back-top" aria-label="Revenir en haut du site" title="Revenir en haut du site">&uarr;</a>
+
+{% schema %}
+{
+  "name": "TYLT Footer",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Legal menu",
+      "default": "footer"
+    },
+    {
+      "type": "text",
+      "id": "copyright_name",
+      "label": "Copyright name",
+      "default": "TYLT"
+    }
+  ]
+}
+{% endschema %}

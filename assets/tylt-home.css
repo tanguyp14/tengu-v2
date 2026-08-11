@@ -1,0 +1,335 @@
+/* TYLT home page — ported pixel-for-pixel from le_tengu_starter front-page (hero-status + nav + svg-morph + svg-marquee) */
+
+body.tylt-home {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* Logo, fixed top-left */
+.tylt-home .tylt-branding {
+  position: relative;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.tylt-home .tylt-branding .tylt-logo-link {
+  pointer-events: auto;
+  display: block;
+}
+
+.tylt-home .tylt-branding img {
+  max-height: clamp(80px, 5vw, 6rem);
+  width: auto;
+  margin: 2rem;
+  display: block;
+}
+
+.tylt-home .tylt-back-top {
+  display: none;
+}
+
+/* Header pinned bottom, nav rendered as giant outlined text */
+.tylt-home .tylt-header {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  z-index: 12;
+}
+
+.tylt-home .tylt-header .tylt-container {
+  max-width: none;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 749px) {
+  .tylt-home .tylt-header .tylt-container {
+    padding: 0 1rem;
+  }
+}
+
+.tylt-home-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin: 0 0 50px;
+  padding: 0;
+  list-style: none;
+}
+
+.tylt-home-nav li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.tylt-home-nav a {
+  font-size: clamp(2.2rem, 5vw, 6rem);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--tylt-black);
+  text-transform: lowercase;
+  line-height: 1;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  font-family: var(--tylt-font);
+}
+
+.tylt-home-nav a::after {
+  content: '';
+  width: 0;
+  height: auto;
+  aspect-ratio: 94 / 79;
+  background-image: url("data:image/svg+xml,%3Csvg width='94' height='79' viewBox='0 0 94 79' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M93.7266 59H74.7266V31.0225L45.1289 58.0186L43.4531 59.2412L9.45312 78.7412L0 62.2588L33.0967 43.2764L59.7139 19H31.2266V0H93.7266V59Z' fill='black'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: width 0.3s ease;
+  flex-shrink: 0;
+}
+
+.tylt-home-nav a:hover {
+  color: var(--tylt-black);
+}
+
+.tylt-home-nav a:hover::after {
+  width: clamp(2rem, 4vw, 5rem);
+}
+
+.tylt-home .tylt-footer {
+  position: absolute;
+}
+
+/* Hero status block */
+.tylt-hero-status-block {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0;
+  position: relative;
+  z-index: 21;
+}
+
+@media screen and (max-width: 749px) {
+  .tylt-hero-status-block {
+    padding: 2rem 1rem;
+  }
+}
+
+.tylt-hero-status-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tylt-hero-title {
+  font-size: clamp(1rem, 2vw, 2rem);
+  line-height: 1.1;
+  margin: 0;
+  color: var(--tylt-black);
+  font-weight: 400;
+  font-family: var(--tylt-font);
+}
+
+.tylt-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 749px) {
+  .tylt-hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+.tylt-hero-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 10px 20px;
+  background-color: rgba(239, 239, 239, 0.8);
+  border-radius: 50px;
+  border: 1px solid rgba(21, 21, 21, 0.1);
+}
+
+.tylt-status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.tylt-status-indicator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: tylt-pulse 2s ease-in-out infinite;
+}
+
+.tylt-status-text {
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  color: var(--tylt-black);
+  font-weight: 500;
+}
+
+.tylt-status-available .tylt-status-indicator {
+  background-color: #10b981;
+}
+.tylt-status-available .tylt-status-indicator::before {
+  background-color: rgba(16, 185, 129, 0.4);
+}
+
+.tylt-status-busy .tylt-status-indicator {
+  background-color: var(--tylt-orange);
+}
+.tylt-status-busy .tylt-status-indicator::before {
+  background-color: rgba(255, 153, 0, 0.4);
+}
+
+.tylt-status-unavailable .tylt-status-indicator {
+  background-color: var(--tylt-red);
+}
+.tylt-status-unavailable .tylt-status-indicator::before {
+  background-color: rgba(227, 7, 66, 0.4);
+}
+
+@keyframes tylt-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2);
+  }
+}
+
+/* SVG morph decorative layer */
+.tylt-svg-morph-block {
+  width: 100%;
+  height: 100dvh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  overflow: visible;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.tylt-svg-morph-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+@media screen and (min-width: 750px) {
+  .tylt-svg-morph-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+  }
+}
+
+.tylt-svg-morph-container {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tylt-svg-morph-canvas {
+  width: auto;
+  height: 100%;
+  max-height: calc(100vh / 3);
+  max-height: calc(100dvh / 3);
+  display: block;
+  overflow: visible;
+}
+
+@media screen and (min-width: 768px) {
+  .tylt-svg-morph-canvas {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+}
+
+.tylt-svg-shape {
+  transform-origin: center;
+  opacity: 0.2;
+}
+
+/* SVG marquee decorative layer */
+.tylt-svg-marquee-block {
+  position: absolute;
+  width: calc(100vw + 2rem);
+  height: 100vh;
+  height: 100dvh;
+  left: 50%;
+  right: 50%;
+  top: 0;
+  margin-left: calc(-50vw - 2rem);
+  margin-right: calc(-50vw);
+  overflow: hidden;
+  padding: 10rem 0;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.tylt-svg-marquee-wrapper {
+  width: 130%;
+  overflow: hidden;
+  transform: rotate(var(--marquee-angle, -15deg));
+  user-select: none;
+  padding: 0;
+  position: relative;
+  left: 50%;
+  margin-left: -65%;
+}
+
+.tylt-svg-marquee-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  will-change: transform;
+}
+
+.tylt-svg-marquee-item {
+  flex-shrink: 0;
+  height: var(--svg-height, 30vh);
+  width: auto;
+}
+
+.tylt-svg-marquee-item img {
+  height: 100%;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  opacity: var(--svg-opacity, 0.5);
+}

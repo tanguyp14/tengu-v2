@@ -1,0 +1,55 @@
+{%- liquid
+  assign is_home = false
+  if template.name == 'index'
+    assign is_home = true
+  endif
+-%}
+
+<div class="tylt-branding">
+  <a href="{{ routes.root_url }}" class="tylt-logo-link">
+    {%- if section.settings.logo != blank -%}
+      {{ section.settings.logo | image_url: width: 400 | image_tag: loading: 'eager' }}
+    {%- else -%}
+      <img src="{{ 'tylt-logo.png' | asset_url }}" alt="{{ shop.name }}" width="395" height="170" loading="eager">
+    {%- endif -%}
+  </a>
+</div>
+
+<header id="tylt-masthead" class="tylt-header" role="banner">
+  <div class="tylt-container">
+    <nav id="tylt-site-navigation" class="tylt-main-navigation{% if is_home %} tylt-home-nav-wrap{% endif %}" role="navigation" aria-label="Menu principal">
+      {%- if is_home -%}
+        <ul class="tylt-home-nav">
+          {%- for link in section.settings.menu.links -%}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {%- endfor -%}
+        </ul>
+      {%- else -%}
+        <ul class="tylt-simple-nav">
+          {%- for link in section.settings.menu.links -%}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </nav>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "TYLT Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,92 @@
+<section
+  class="tylt-svg-marquee-block"
+  style="--marquee-angle: {{ section.settings.angle }}deg; --svg-height: {{ section.settings.height }}; --svg-opacity: {{ section.settings.opacity | divided_by: 100.0 }};"
+  data-speed="{{ section.settings.speed }}"
+>
+  <div class="tylt-svg-marquee-wrapper">
+    <div class="tylt-svg-marquee-track">
+      {%- for block in section.blocks -%}
+        <div class="tylt-svg-marquee-item" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            {{ block.settings.image | image_url: width: 400 | image_tag: loading: 'lazy' }}
+          {%- else -%}
+            <img src="{{ block.settings.fallback_asset | default: 'tylt-marquee-1.svg' | asset_url }}" alt="" width="350" height="350" loading="lazy">
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "TYLT SVG Marquee",
+  "settings": [
+    {
+      "type": "range",
+      "id": "angle",
+      "label": "Angle (deg)",
+      "min": -45,
+      "max": 45,
+      "step": 1,
+      "default": -15
+    },
+    {
+      "type": "text",
+      "id": "height",
+      "label": "Item height",
+      "default": "30vh"
+    },
+    {
+      "type": "range",
+      "id": "opacity",
+      "label": "Opacity (%)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Scroll speed",
+      "min": 0.2,
+      "max": 5,
+      "step": 0.2,
+      "default": 1
+    }
+  ],
+  "blocks": [
+    {
+      "type": "svg",
+      "name": "SVG shape",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "fallback_asset",
+          "label": "Fallback theme asset filename",
+          "info": "Used when no image is picked, e.g. tylt-marquee-1.svg"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "TYLT SVG Marquee",
+      "blocks": [
+        { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-1.svg" } },
+        { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-2.svg" } },
+        { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-3.svg" } },
+        { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-4.svg" } },
+        { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-5.svg" } },
+        { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-6.svg" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

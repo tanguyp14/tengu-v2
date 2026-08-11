@@ -1,0 +1,82 @@
+{%- liquid
+  assign status_classes = 'tylt-status-available'
+  if section.settings.status_color == 'orange'
+    assign status_classes = 'tylt-status-busy'
+  elsif section.settings.status_color == 'red'
+    assign status_classes = 'tylt-status-unavailable'
+  endif
+-%}
+
+<div class="tylt-hero-status-block">
+  <div class="tylt-hero-status-content">
+    {%- if section.settings.heading != blank -%}
+      <h1 class="tylt-hero-title">{{ section.settings.heading }}</h1>
+    {%- endif -%}
+
+    <div class="tylt-hero-actions">
+      {%- if section.settings.show_status and section.settings.status_text != blank -%}
+        <div class="tylt-hero-status-pill {{ status_classes }}">
+          <span class="tylt-status-indicator"></span>
+          <span class="tylt-status-text">{{ section.settings.status_text }}</span>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.button_url != blank -%}
+        <a href="{{ section.settings.button_url }}" class="tylt-button">{{ section.settings.button_text }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "TYLT Hero Status",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Projets design, formations web et sites web personnalisés"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_status",
+      "label": "Show status pill",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "status_color",
+      "label": "Status color",
+      "options": [
+        { "value": "green", "label": "Available" },
+        { "value": "orange", "label": "Busy" },
+        { "value": "red", "label": "Unavailable" }
+      ],
+      "default": "green"
+    },
+    {
+      "type": "text",
+      "id": "status_text",
+      "label": "Status text",
+      "default": "Sur un projet, mais dispo pour discuter du votre"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Contactez-moi →"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "TYLT Hero Status"
+    }
+  ]
+}
+{% endschema %}

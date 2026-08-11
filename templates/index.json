@@ -1,75 +1,38 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "tylt-morph": {
+      "type": "tylt-svg-morph",
+      "settings": {}
+    },
+    "tylt-marquee": {
+      "type": "tylt-svg-marquee",
       "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
+        "svg-1": { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-1.svg" } },
+        "svg-2": { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-2.svg" } },
+        "svg-3": { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-3.svg" } },
+        "svg-4": { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-4.svg" } },
+        "svg-5": { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-5.svg" } },
+        "svg-6": { "type": "svg", "settings": { "fallback_asset": "tylt-marquee-6.svg" } }
       },
-      "block_order": [
-        "heading",
-        "button"
-      ],
+      "block_order": ["svg-1", "svg-2", "svg-3", "svg-4", "svg-5", "svg-6"],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "angle": -15,
+        "height": "30vh",
+        "opacity": 50,
+        "speed": 1
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "tylt-hero": {
+      "type": "tylt-hero-status",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "heading": "Projets design, formations web et sites web personnalisés",
+        "show_status": true,
+        "status_color": "green",
+        "status_text": "Sur un projet, mais dispo pour discuter du votre",
+        "button_text": "Contactez-moi →",
+        "button_url": "/pages/contact"
       }
     }
   },
-  "order": [
-    "image_banner",
-    "featured_collection"
-  ]
+  "order": ["tylt-morph", "tylt-marquee", "tylt-hero"]
 }
