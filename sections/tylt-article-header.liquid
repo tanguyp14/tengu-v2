@@ -1,6 +1,6 @@
 {%- render 'tylt-page-title', title: article.title -%}
 
-<div class="tylt-page-content">
+<div class="tylt-page-content tylt-article-header-content">
   {%- if article.image != blank -%}
     <div class="tylt-article-image">
       {{ article.image | image_url: width: 1600 | image_tag: loading: 'eager', widths: '600,900,1200,1600' }}
@@ -8,23 +8,15 @@
   {%- endif -%}
 
   {%- if article.tags.size > 0 -%}
-    <div class="tylt-cpt-card-tags" style="color: var(--tylt-black); opacity: 0.6; margin: 1rem 0;">
+    <div class="tylt-cpt-card-tags tylt-article-tags">
       {{ article.tags | join: ' - ' }}
     </div>
   {%- endif -%}
-
-  <div class="tylt-article-content tylt-rich-text">
-    {{ article.content }}
-  </div>
-
-  <div class="tylt-article-back">
-    <a href="{{ blog.url }}" class="tylt-button">&larr; Retour à {{ blog.title }}</a>
-  </div>
 </div>
 
 {% schema %}
 {
-  "name": "TYLT Article",
+  "name": "TYLT Article Header",
   "settings": []
 }
 {% endschema %}

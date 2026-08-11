@@ -1,6 +1,6 @@
 {
   "sections": {
-    "main": {
+    "tylt_formations_BeNCTQ": {
       "type": "tylt-formations",
       "blocks": {
         "formation-1": {
@@ -58,6 +58,13 @@
             "image": "tylt-formation-fleur2.svg",
             "content": "<p class=\"wp-block-paragraph\">Formez vos élèves à une technologie de création rapide et exigeante.</p>\n<p class=\"wp-block-paragraph\">De la création de fichiers vectoriels (Illustrator, LightBurn) jusqu’au réglage des paramètres selon les matériaux, chaque étape est abordée de manière rigoureuse.<br></p>\n<p class=\"wp-block-paragraph\">L’accent est mis sur la sécurité, l’entretien et l’optimisation, pour graver et découper proprement, efficacement et sans danger.</p>\n<p class=\"wp-block-paragraph\">Quelques points clef :</p>\n<ul class=\"wp-block-list\">\n<li>Création de fichiers vectoriels (Illustrator, LightBurn…)</li>\n<li>Types de matériaux et réglages adaptés</li>\n<li>Sécurité, ventilation, entretien machine</li>\n<li>Optimisation des temps de gravure et de découpe</li>\n</ul>"
           }
+        },
+        "formation_kEXcf6": {
+          "type": "formation",
+          "settings": {
+            "title": "Nouvelle formation",
+            "content": ""
+          }
         }
       },
       "block_order": [
@@ -67,14 +74,17 @@
         "formation-4",
         "formation-5",
         "formation-6",
-        "formation-7"
+        "formation-7",
+        "formation_kEXcf6"
       ],
+      "name": "TYLT Formations",
       "settings": {
-        "page_title": "Formations"
+        "page_title": "Formations",
+        "intro_text": ""
       }
     }
   },
   "order": [
-    "main"
+    "tylt_formations_BeNCTQ"
   ]
 }

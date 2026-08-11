@@ -1,9 +1,17 @@
 {
   "sections": {
-    "main": {
-      "type": "tylt-article",
+    "header": {
+      "type": "tylt-article-header",
+      "settings": {}
+    },
+    "body": {
+      "type": "tylt-article-body",
+      "settings": {}
+    },
+    "footer": {
+      "type": "tylt-article-footer",
       "settings": {}
     }
   },
-  "order": ["main"]
+  "order": ["header", "body", "footer"]
 }

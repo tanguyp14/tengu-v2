@@ -1,0 +1,29 @@
+{%- comment -%}
+  Freeform HTML content block — the TYLT equivalent of a WordPress
+  "rich-text" ACF block. Add as many as needed per article/page template,
+  reorder them in the theme editor.
+{%- endcomment -%}
+
+<div class="tylt-page-content">
+  <div class="tylt-article-content tylt-rich-text">
+    {{ section.settings.html }}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "TYLT Content",
+  "settings": [
+    {
+      "type": "html",
+      "id": "html",
+      "label": "Contenu HTML"
+    }
+  ],
+  "presets": [
+    {
+      "name": "TYLT Content"
+    }
+  ]
+}
+{% endschema %}

@@ -381,6 +381,12 @@ body.tylt-body:not(.tylt-home) main#MainContent {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M65.1951 114.707L0 56.7912L14.676 36.5488L65.1951 94.7458L41.2056 25.5842L65.1951 0L76.7665 86.3114L96.5226 25.5842L144.784 75.0657L96.5226 104.867L162 128.764L109.223 167L76.7665 128.764L29.6341 154.348L0 104.867L65.1951 114.707Z'/%3E%3C/svg%3E");
 }
 
+.tylt-article-tags {
+  color: var(--tylt-black) !important;
+  opacity: 0.6;
+  margin: 1rem 0 !important;
+}
+
 /* Article single page */
 .tylt-article-image img {
   width: 100%;

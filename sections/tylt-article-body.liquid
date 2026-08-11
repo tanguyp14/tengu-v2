@@ -1,0 +1,18 @@
+{%- comment -%}
+  Default fallback: renders the article's native Shopify body content.
+  Used only by the generic templates/article.json — articles with their
+  own duplicated template use TYLT Content blocks instead.
+{%- endcomment -%}
+
+<div class="tylt-page-content">
+  <div class="tylt-article-content tylt-rich-text">
+    {{ article.content }}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "TYLT Article Body",
+  "settings": []
+}
+{% endschema %}
