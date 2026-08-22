@@ -27,6 +27,12 @@
           "type": "price",
           "settings": {}
         },
+        "tylt_bundles_product_type_picker_a8qFHy": {
+          "type": "shopify://apps/tylt-bundles/blocks/product-type-picker/01a02887-8ab1-7f19-b756-b9030ac41c58",
+          "settings": {
+            "label": "Modèle"
+          }
+        },
         "tylt_bundles_bundle_picker_xrXRRi": {
           "type": "shopify://apps/tylt-bundles/blocks/bundle-picker/01a02887-8ab1-7f19-b756-b9030ac41c58",
           "settings": {}
@@ -64,6 +70,7 @@
         "vendor",
         "title",
         "price",
+        "tylt_bundles_product_type_picker_a8qFHy",
         "tylt_bundles_bundle_picker_xrXRRi",
         "variant_picker",
         "quantity_selector",
